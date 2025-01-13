@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/styles.css">
+    <title>각인 문구 미리보기</title>
+</head>
+
+<body>
+    <div id="wrap">
+        <h1 id="title">각인 문구 미리보기</h1>
+
+        <div class="choice">
+            <div class="fontBox">
+                <input id="text" type="text" placeholder="각인 문구" />
+
+                <select name="font" id="selectFont">
+                    <option value="Nanum Gothic">나눔고딕</option>
+                    <option value="Bickham Script Std">Bickham</option>
+                </select>
+            </div>
+
+            <div class="imgBox">
+                <p>제품 선택</p>
+                <select name="pointer" id="pointerSelect">
+                    <option value="R1">SP-R1</option>
+                    <option value="R2">SP-R2</option>
+                </select>
+            </div>
+        </div>
+
+
+
+        <div class="previewBox">
+            <p id="textView" class="textView">SMARTPOINTER</p>
+            <img id="imagePreview" src="./assets/img/R1.png" alt="Preview Image" />
+        </div>
+
+    </div>
+
+    <script>
+        const textInput = document.querySelector('#text');
+        const fontSelect = document.querySelector('#selectFont');
+        const imageSelect = document.querySelector('#pointerSelect');
+        const textView = document.querySelector('#textView');
+        const imagePreview = document.querySelector('#imagePreview');
+
+        textInput.addEventListener('input', () => {
+            textView.textContent = textInput.value || "SMARTPOINTER";
+        });
+
+        fontSelect.addEventListener('change', () => {
+            textView.style.fontFamily = fontSelect.value;
+        });
+
+        imageSelect.addEventListener('change', () => {
+            const selectedValue = imageSelect.value;
+            if (selectedValue === 'R1') {
+                imagePreview.src = './assets/img/R1.png';
+                textView.style.left = '69%';
+                textView.style.width = '27.7%';
+            } else if (selectedValue === 'R2') {
+                imagePreview.src = './assets/img/R2.png';
+                textView.style.left = '3%';
+                textView.style.width = '31.1%';
+            }
+        });
+    </script>
+</body>
+
+</html>

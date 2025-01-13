@@ -1,0 +1,8 @@
+@charset "UTF-8";
+
+/* setting */
+@import "./setting/_font.css";
+@import "./setting/_reset.css";
+
+/* section */
+@import "./section/_main.css"
