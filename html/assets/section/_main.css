@@ -2,66 +2,136 @@
     width: 100%;
     height: auto;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
+.container {
+    padding: 24px 22px;
+    /* background-color: #fcf6ea; */
+    border: 1px solid red;
+}
+
+/* title */
+.title {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+}
+
+.title h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    padding: 2px 4px;
+}
+
+.title p {
+    font-size: 1rem;
+    color: #797979;
+}
+
 /* choice */
+.selectBox,
+.fontBox .inputBox,
+.imgBox {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
 .choice {
     display: flex;
     flex-direction: column;
+    gap: 12px;
+    margin: 12px 0;
 }
 
 .fontBox input,
 .fontBox select,
 .imgBox select {
-    border: 2px solid #797979;
+    border: 2px solid rgba(0, 0, 0, 0.1);
 }
 
-.imgBox {
+.fontBox select,
+.imgBox select {
+    padding: 4px 27px 4px 4px;
+}
+
+.fontBox {
     display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.fontBox .inputBox input {
+    padding: 4px 8px;
 }
 
 /* preview */
 .previewBox {
     position: relative;
-    margin: 20px 24px 24px;
     width: 100%;
     max-width: 1000px;
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 12px 6px;
 }
 
-.previewBox p {
+.previewBox #textArea {
+    width: 25.8%;
+    height: auto;
     position: absolute;
     top: 50%;
-    left: 69%;
-    color: #fde16b;
+    left: 70%;
     transform: translateY(-50%);
+    border: 2px solid red;
+    overflow: hidden;
 
-    width: 27.7%;
-    font-size: 24px;
-    font-family: 'Nanum Gothic';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.previewBox #textView {
+    color: #fde16b;
+    font-size: 1rem;
+    font-family: 'YDIYMjO360', sans-serif;
     text-align: center;
-}
-
-@media screen and (max-width: 1023px) and (min-width: 768px) {
-    .previewBox p {
-        font-size: 18px;
-    }
-}
-
-@media screen and (max-width: 767px) and (min-width: 426px) {
-    .previewBox p {
-        font-size: 12px;
-    }
-}
-
-@media (max-width: 425px) {
-    .previewBox p {
-        font-size: 9px;
-    }
 }
 
 .previewBox img {
     width: 100%;
+}
+
+/* caution */
+.cautionBox h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+}
+
+.cautionBox li {
+    font-size: 1rem;
+}
+
+/* 화살표 */
+.selectBox {
+    position: relative;
+}
+
+.selectBox .arr {
+    position: relative;
+}
+
+.selectBox .arr::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-75%) rotate(135deg);
+
+    width: 10px;
+    height: 10px;
+    border-top: 2px solid rgba(0, 0, 0, 0.2);
+    border-right: 2px solid rgba(0, 0, 0, 0.2);
+    pointer-events: none;
 }

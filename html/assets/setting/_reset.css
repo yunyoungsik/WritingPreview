@@ -44,7 +44,7 @@ input,
 select,
 table,
 textarea {
-    font-family: var(--font-nanum), "Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", helvetica, sans-serif;
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 }
 
  /* 링크 초기화 */
@@ -97,7 +97,7 @@ select {
 }
 
  /* 스킵메뉴 */
-#skip a {
+/* #skip a {
     position: absolute;
     left: 10px;
     top: -92px;
@@ -106,7 +106,7 @@ select {
     padding: 10px 30px;
     color: var(--white);
     background: var(--black);
-}
+} */
 
 #skip a:focus,
 #skip a:active {

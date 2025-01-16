@@ -4,70 +4,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/styles.css">
+    <link rel="stylesheet" href="./assets/styles.css">
+
     <title>각인 문구 미리보기</title>
 </head>
 
 <body>
     <div id="wrap">
-        <h1 id="title">각인 문구 미리보기</h1>
+        <div class="container">
+            <div class="title">
 
-        <div class="choice">
-            <div class="fontBox">
-                <input id="text" type="text" placeholder="각인 문구" />
-
-                <select name="font" id="selectFont">
-                    <option value="Nanum Gothic">나눔고딕</option>
-                    <option value="Bickham Script Std">Bickham</option>
-                </select>
+                <h1>각인 문구 미리보기</h1>
+                <p>각인을 의뢰하기 전 미리 확인해보세요.</p>
             </div>
 
-            <div class="imgBox">
-                <p>제품 선택</p>
-                <select name="pointer" id="pointerSelect">
-                    <option value="R1">SP-R1</option>
-                    <option value="R2">SP-R2</option>
-                </select>
+            <div class="previewBox">
+                <div id="textArea">
+                    <p id="textView" class="textView">Hong Kil Dong</p>
+                    <!-- <pre id="textView" class="textView">SMARTPOINTER</pre> -->
+                </div>
+
+                <img id="imagePreview" src="./assets/img/R1.png" alt="Preview Image" />
+            </div>
+
+            <div class="choice">
+                <div class="fontBox">
+                    <div class="inputBox">
+                        <p>각인 문구</p>
+                        <input id="text" type="text" placeholder="각인 문구를 입력하세요." />
+                        <!-- <textarea id="text" type="text" placeholder="각인 문구를 입력하세요."></textarea> -->
+                    </div>
+
+                    <!-- 폰트 선택 -->
+                    <div class="selectBox">
+                        <p>폰트 선택</p>
+
+                        <div class="arr">
+                            <select name="font" id="selectFont">
+                                <option value="YDIYMjO360">명조체</option>
+                                <option value="YDIYGO350">고딕체</option>
+                                <option value="PyeongBut">평붓체</option>
+                                <option value="HmMagic">매직체</option>
+                                <option value="BickhamStd">Bickham</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 이미지 선택 -->
+                <div class="imgBox">
+                    <div class="selectBox">
+                        <p>제품 선택</p>
+
+                        <div class="arr">
+                            <select name="pointer" id="pointerSelect">
+                                <option value="R1">SP-R1</option>
+                                <option value="R2">SP-R2</option>
+                                <option value="R7">SP-R7</option>
+                                <option value="G4">SP-G4</option>
+                                <option value="G6">SP-G6</option>
+                                <option value="130">SP-130</option>
+                                <option value="200">SP-200</option>
+                                <option value="300">SP-300</option>
+                                <option value="400">SP-400</option>
+                                <option value="800">SP-800</option>
+                                <option value="H1">PPT하이라이트1</option>
+                                <option value="H2">PPT하이라이트2</option>
+                                <option value="H3">PPT하이라이트3</option>
+                                <option value="H4">PPT하이라이트4</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cautionBox">
+                <h3>각인 문구 주의사항</h3>
+                <ul>
+                    <li>미리보기 화면과 실제 출력물과 차이가 있을 수 있습니다.</li>
+                    <li>'Bickham'폰트는 영어 대문자 연속이 발가능합니다.</li>
+                    <li>한자는 '명조체'만 가능합니다.</li>
+                    <li>특수문자는 'ㅁ + 한자' 내에서만 가능합니다.</li>
+                    <li>이모티콘은 각인이 불가능합니다.</li>
+                    <li>각인된 제품은 변심으로 인한 교환 및 반품이 불가합니다.</li>
+                    <li>각인 신청 제품은 오후 2시 주문 건 까지 당일 발송되며, 이후 주문건은 익일 발송됩니다.</li>
+                    </ol>
             </div>
         </div>
-
-
-
-        <div class="previewBox">
-            <p id="textView" class="textView">SMARTPOINTER</p>
-            <img id="imagePreview" src="./assets/img/R1.png" alt="Preview Image" />
-        </div>
-
     </div>
 
-    <script>
-        const textInput = document.querySelector('#text');
-        const fontSelect = document.querySelector('#selectFont');
-        const imageSelect = document.querySelector('#pointerSelect');
-        const textView = document.querySelector('#textView');
-        const imagePreview = document.querySelector('#imagePreview');
-
-        textInput.addEventListener('input', () => {
-            textView.textContent = textInput.value || "SMARTPOINTER";
-        });
-
-        fontSelect.addEventListener('change', () => {
-            textView.style.fontFamily = fontSelect.value;
-        });
-
-        imageSelect.addEventListener('change', () => {
-            const selectedValue = imageSelect.value;
-            if (selectedValue === 'R1') {
-                imagePreview.src = './assets/img/R1.png';
-                textView.style.left = '69%';
-                textView.style.width = '27.7%';
-            } else if (selectedValue === 'R2') {
-                imagePreview.src = './assets/img/R2.png';
-                textView.style.left = '3%';
-                textView.style.width = '31.1%';
-            }
-        });
-    </script>
+    <script src="./assets/js/script.js"></script>
 </body>
 
 </html>
