@@ -50,7 +50,7 @@
 .fontBox input,
 .fontBox select,
 .imgBox select {
-    border: 2px solid rgba(0, 0, 0, 0.1);
+    border: 1px solid #999;
 }
 
 .fontBox select,
@@ -73,7 +73,8 @@
     position: relative;
     width: 100%;
     max-width: 1000px;
-    background-color: rgba(0, 0, 0, 0.1);
+    border: 1px solid #efefef;
+    background-color: #fff;
     padding: 12px 6px;
 }
 
@@ -104,6 +105,10 @@
 }
 
 /* caution */
+.cautionBox {
+    background-color: #fafafa;
+}
+
 .cautionBox h3 {
     font-size: 1.125rem;
     font-weight: 600;
